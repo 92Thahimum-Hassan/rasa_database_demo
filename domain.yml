@@ -1,0 +1,63 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - add_data
+
+entities:
+  - number
+  - email
+slots:
+ name:
+   type: text
+ number:
+   type: any
+ email:
+   type: any
+ occupation:
+   type: text
+
+  
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_ask_name:
+  - text: "May I know your name please"
+
+  utter_ask_number:
+  - text: "May I know your number please"
+
+  utter_ask_email:
+  - text: "May I know your email please"
+
+  utter_ask_occupation:
+  - text: "May I know your occupation please"
+
+actions:
+    - utter_greet
+    - utter_goodbye
+    - utter_ask_name
+    - utter_ask_number
+    - utter_ask_email
+    - utter_ask_occupation
+
+forms:
+    - Form_Info
+
+e2e_actions: []
+
+config:
+  store_entities_as_slots: true
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
